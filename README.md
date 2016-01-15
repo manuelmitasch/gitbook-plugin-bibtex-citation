@@ -9,7 +9,7 @@ Add this to your `book.json`, then run `gitbook install`:
 
 ```
 {
-    plugins: ["bibtex-citation"]
+    "plugins": ["bibtex-citation"]
 }
 ```
 
@@ -28,7 +28,7 @@ You can also add a table of references through:
 {% references %} {% endreferences %}
 ```
 
-Only used literature is included in the table of references. They are ordered by there usage within the text.
+Only used literature is included in the table of references. They are ordered by the usage within the text.
 
 
 ### Limitations

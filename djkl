@@ -1,0 +1,45 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex e1dbb16..cedc268 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -9,7 +9,7 @@[m [mAdd this to your `book.json`, then run `gitbook install`:[m
+ [m
+ ```[m
+ {[m
+[31m-    plugins: ["bibtex-citation"][m
+[32m+[m[32m    "plugins": ["bibtex-citation"][m
+ }[m
+ ```[m
+ [m
+[36m@@ -28,7 +28,7 @@[m [mYou can also add a table of references through:[m
+ {% references %} {% endreferences %}[m
+ ```[m
+ [m
+[31m-Only used literature is included in the table of references. They are ordered by there usage within the text.[m
+[32m+[m[32mOnly used literature is included in the table of references. They are ordered by the usage within the text.[m
+ [m
+ [m
+ ### Limitations[m
+[1mdiff --git a/package.json b/package.json[m
+[1mindex 44560fa..9339fcb 100644[m
+[1m--- a/package.json[m
+[1m+++ b/package.json[m
+[36m@@ -1,15 +1,16 @@[m
+ {[m
+   "name": "gitbook-plugin-bibtex-citation",[m
+   "description": "Bibtex citations for GitBook",[m
+[32m+[m[32m  "author": "Manuel Mitasch",[m
+   "main": "index.js",[m
+   "version": "1.1.0",[m
+   "engines": {[m
+     "gitbook": ">1.x.x"[m
+   },[m
+[31m-  "homepage": "",[m
+[32m+[m[32m  "homepage": "https://github.com/manuelmitasch/gitbook-plugin-bibtex-citation",[m
+   "repository": {[m
+     "type": "git",[m
+[31m-    "url": ""[m
+[32m+[m[32m    "url": "https://github.com/manuelmitasch/gitbook-plugin-bibtex-citation"[m
+   },[m
+   "license": "MIT",[m
+   "dependencies": {[m
