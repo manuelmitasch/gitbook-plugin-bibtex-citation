@@ -29,7 +29,7 @@ module.exports = {
 
     hooks: {
         init: function() {
-            var bib = fs.readFileSync(this.root + '/literature.bib', 'utf8');
+            var bib = fs.readFileSync('./literature.bib', 'utf8');
             this.bib = bibtexParse.toJSON(bib);
             this.bibCount = 0;
         }
