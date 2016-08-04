@@ -41,7 +41,7 @@ module.exports = {
     blocks: {
         references: {
             process: function(blk) {
-                var usedBib = _.filter(this.book.bib, 'used');
+                var usedBib = _.filter(this.config.get("bib"), 'used');
                 var sortedBib = _.sortBy(usedBib, 'number');
 
                 var result = '<table class="references">';
