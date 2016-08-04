@@ -12,13 +12,15 @@ module.exports = {
 
     filters: {
         cite: function(key) {
-            var citation = _.find(this.book.bib, {'citationKey': key.toUpperCase()});
+            bib = this.config.get("bib")
+            bibCount = this.config.get("bibCount") + 1
+            var citation = _.find(bib, {'citationKey': key.toUpperCase()});
 
             if (citation != undefined) {
                 if (!citation.used) {
                     citation.used = true;
-                    this.book.bibCount++;
-                    citation.number = this.book.bibCount;
+                    this.config.set("bibCount",bibCount)
+                    citation.number = bibCount;
                 }
                 return '[' + citation.number + ']';
             } else {
@@ -29,16 +31,17 @@ module.exports = {
 
     hooks: {
         init: function() {
-            var bib = fs.readFileSync(this.root + '/literature.bib', 'utf8');
-            this.bib = bibtexParse.toJSON(bib);
-            this.bibCount = 0;
+            var bib = fs.readFileSync('./literature.bib', 'utf8')
+            this.config.set("bib",bibtexParse.toJSON(bib))
+            this.config.set("bibCount", 0)
+            console.log(this.book.config)
         }
     },
 
     blocks: {
         references: {
             process: function(blk) {
-                var usedBib = _.filter(this.book.bib, 'used');
+                var usedBib = _.filter(this.config.get("bib"), 'used');
                 var sortedBib = _.sortBy(usedBib, 'number');
 
                 var result = '<table class="references">';
